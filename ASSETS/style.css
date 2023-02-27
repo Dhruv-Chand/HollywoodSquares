@@ -1,0 +1,163 @@
+@font-face {
+	font-family: BellBottom;
+	src: url(BellBottom.ttf);
+}
+
+@font-face {
+	font-family: HipPocket;
+	src: url(MagicMT.ttf);
+}
+
+* {
+	color: white;
+	text-align: center;
+	font-family: HipPocket , Comic Sans MS;
+	font-kerning: auto;
+}
+
+img {
+	height: 50px;
+	width: 50px;
+	transition: .5s;
+}
+
+#team1h2 , #team2h2 {
+	animation: glow 5s ease-in-out infinite alternate;
+	transition: .5s;
+}
+
+#topLeft , #topCentre , #topRight , #midLeft , #midCentre , #midRight , #bottomLeft , #bottomCentre , #bottomRight {
+	background-color: rgba(0,144,21,.7);
+	border: 1px solid black;
+}
+
+.lblXO {
+	display: none;
+}
+
+#game {
+	display: none;
+}
+
+select , option , #txtTeam1 , #txtTeam2 {
+	color: black;
+	text-align: left;
+}
+
+#qTopLeft , #qTopCentre , #qTopRight , #qMidLeft , #qMidCentre , #qMidRight , #qBottomLeft , #qBottomCentre , #qBottomRight {
+	display: none;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 4px;
+	padding: 7px;
+	font-family: HipPocket;
+}
+
+#initQuestions {
+	background-color: rgba(0,0,0,.6);
+	border-radius: 4px;
+	padding: 7px;
+}
+
+td {
+	height: 100px;
+	width: 100px;
+	background-color: green;
+}
+
+#BtnWin {
+	display: none;
+	background-color: blue;
+	border: none;
+	border-radius: 5px;
+	text-align: center;	
+}
+
+#BtnWin:hover {
+	transition: .75s;
+	box-shadow: 0 4px #000;
+	background-color: green;
+	padding: .5em;
+	color: white;
+	border-radius: 7px;
+}
+
+#BtnWin:active {
+	transform: translate(2px,2px);
+}
+
+.chk {
+	background-color: blue;
+	border: none;
+	border-radius: 5px;	
+}
+
+.chk:hover {
+	transition: .75s;
+	box-shadow: 0 4px #000;
+	background-color: green;
+	padding: .5em;
+	color: white;
+	border-radius: 7px;
+}
+
+.chk:active {
+	transform: translate(2px,2px);
+}
+body{
+	background-size: cover;
+	background-attachment: fixed;
+  	background-position: center;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+h1 {
+  font-size: 50px;
+  color: #fff;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family: BellBottom , Comic Sans MS;
+}
+
+h2 {
+	font-size: 20px;
+  	color: #fff;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+#madeBy {
+	display: none;
+	margin-top: 32vh;
+	float: center;
+	animation: none;
+}
+
+#lblWin {
+
+	text-align: center;
+	font-size: 50px;
+	animation: glow 1s ease-in-out infinite alternate;;
+}
+
+@keyframes glow {/*Glowing code from https://www.w3schools.com/howto/howto_css_glowing_text.asp*/
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700, 0 0 60px #ffd700, 0 0 70px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 15px #fff, 0 0 25px #ff4da6, 0 0 35px #ff4da6, 0 0 45px #ff4da6, 0 0 55px #ff4da6, 0 0 65px #ff4da6, 0 0 75px #ff4da6;
+  }
+}
+
+@keyframes win {
+	0% {background-color: rgba(255,215,0,.7);}
+	15% {background-color: rgba(204,255,99,.7);}
+	30% {background-color: rgba(113,255,103,.7);}
+	45% {background-color: rgba(99,250,150,.7);}
+	60% {background-color: rgba(75,250,250,.7);}
+	80% {background-color: rgba(75,155,255,.7);}
+	100% {background-color: rgba(50,50,255,.7);}
+}
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hollywood Squares</title>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+		 	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+		</script>
+		<script type="text/javascript" src="ASSETS/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="ASSETS/style.css">
+	</head>
+	<body background="ASSETS/60.png">
+	  <h1>Hollywood Squares</h1>
+	  	<div id = "initQuestions">
+		  Please Enter Team 1's Name: <input type="text" id = "txtTeam1" value = "Team 1">
+		  <br>
+		  <br>
+		  Please Enter Team 2's Name: <input type="text" id = "txtTeam2" value = "Team 2">
+		  <br>
+		  <br>
+		  <h3>Difficulty:</h3>
+		  <select id = "selDif">
+		  	<option>Easy</option>
+		  	<option>Medium</option>
+		  	<option>Hard</option>
+		  </select>
+		  <br>
+		  <br>
+		  <h3>Topic:</h3>
+		  <select id="selType">
+		  	<option data-c = "9">General Knowledge</option>
+		  	<option data-c = "10">Books</option>
+		  	<option data-c = "11">Film</option>
+		  	<option data-c = "12">Music</option>
+		  	<option data-c = "14">Television</option>
+		  	<option data-c = "16">Board Games</option>
+		  	<option data-c = "15">Video Games</option>
+		  	<option data-c = "17">Science</option>
+		  	<option data-c = "18">Computers</option>
+		  	<option data-c = "20">Mythology</option>
+		  	<option data-c = "21">Sports</option>
+		  	<option data-c = "22">Geography</option>
+		  	<option data-c = "23">History</option>
+		  	<option data-c = "26">Celebrities</option>
+		  	<option data-c = "28">Vehicles</option>
+		  </select>
+		  <br>
+		  <br>
+		  <input type = "checkbox" name = "chkboxAnimations" id = "chkboxAnimations" checked>Animations?
+		  <br>
+		  <br>
+		  <button id = "chkInitQuestions" class = "chk">Click Here to Start the Game</button>
+		</div>
+
+		<h2 id = "team1h2"></h2>
+		<h2 id = "team2h2"></h2>
+
+	  <table id = "game">
+	    
+	    <tr>
+	      <td class = "top left" id = "topLeft"><label id = "lblTopLeftX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblTopLeftO" class = "lblXO"><img src = "ASSETS/O.png"></label></td> <!-- Add div with x / o when clicked -->
+	      <td class = "top centre" id = "topCentre"><label id = "lblTopCentreX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblTopCentreO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	      <td class = "top right" id = "topRight"><label id = "lblTopRightX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblTopRightO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	    </tr>
+	    
+	    <tr>
+	      <td class = "mid left" id = "midLeft"><label id = "lblMidLeftX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblMidLeftO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	      <td class = "mid centre" id = "midCentre"><label id = "lblMidCentreX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblMidCentreO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	      <td class = "mid right" id = "midRight"><label id = "lblMidRightX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblMidRightO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	    </tr>
+	    
+	    <tr>
+	      <td class = "bottom left" id = "bottomLeft"><label id = "lblBottomLeftX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblBottomLeftO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	      <td class = "bottom centre" id = "bottomCentre"><label id = "lblBottomCentreX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblBottomCentreO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	      <td class = "bottom right" id = "bottomRight"><label id = "lblBottomRightX" class = "lblXO"><img src = "ASSETS/X.png"></label><label id = "lblBottomRightO" class = "lblXO"><img src = "ASSETS/O.png"></label></td>
+	    </tr>
+
+	    <div id = "questionBox">
+	    	<div id = "qTopLeft">
+	    		<h3 id = "qTopLefth3"></h3>
+		    	<input type = "radio" id = "topLeftA" name="TopLeft"><p id = "topLeftAP"></p>
+		    	<input type = "radio" id = "topLeftB" name="TopLeft"><p id = "topLeftBP"></p>
+				<input type = "radio" id = "topLeftC" name="TopLeft"><p id = "topLeftCP"></p>
+		    	<input type = "radio" id = "topLeftD" name="TopLeft"><p id = "topLeftDP"></p>
+		    	<button id = "chkTopLeft" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qTopCentre">
+		    	<h3 id = "qTopCentreh3"></h3>
+		    	<input type = "radio" id = "topCentreA" name="TopCentre"><p id = "topCentreAP"></p>
+		    	<input type = "radio" id = "topCentreB" name="TopCentre"><p id = "topCentreBP"></p>
+		    	<input type = "radio" id = "topCentreC" name="TopCentre"><p id = "topCentreCP"></p>
+		    	<input type = "radio" id = "topCentreD" name="TopCentre"><p id = "topCentreDP"></p>
+		    	<button id = "chkTopCentre" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qTopRight">
+		    	<h3 id = "qTopRighth3"></h3>
+		    	<input type = "radio" id = "topRightA" name="TopRight"><p id = "topRightAP"></p>
+		    	<input type = "radio" id = "topRightB" name="TopRight"><p id = "topRightBP"></p>
+		    	<input type = "radio" id = "topRightC" name="TopRight"><p id = "topRightCP"></p>
+		    	<input type = "radio" id = "topRightD" name="TopRight"><p id = "topRightDP"></p>
+		    	<button id = "chkTopRight" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qMidLeft">
+		    	<h3 id = "qMidLefth3"></h3>
+		    	<input type = "radio" id = "midLeftA" name="MidLeft"><p id = "midLeftAP"></p>
+		    	<input type = "radio" id = "midLeftB" name="MidLeft"><p id = "midLeftBP"></p>
+		    	<input type = "radio" id = "midLeftC" name="MidLeft"><p id = "midLeftCP"></p>
+		    	<input type = "radio" id = "midLeftD" name="MidLeft"><p id = "midLeftDP"></p>
+		    	<button id = "chkMidLeft" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qMidCentre">
+		    	<h3 id = "qMidCentreh3"></h3>
+		    	<input type = "radio" id = "midCentreA" name="MidCentre"><p id = "midCentreAP"></p>
+		    	<input type = "radio" id = "midCentreB" name="MidCentre"><p id = "midCentreBP"></p>
+		    	<input type = "radio" id = "midCentreC" name="MidCentre"><p id = "midCentreCP"></p>
+		    	<input type = "radio" id = "midCentreD" name="MidCentre"><p id = "midCentreDP"></p>
+		    	<button id = "chkMidCentre" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qMidRight">
+		    	<h3 id = "qMidRighth3"></h3>
+		    	<input type = "radio" id = "midRightA" name="MidRight"><p id = "midRightAP"></p>
+		    	<input type = "radio" id = "midRightB" name="MidRight"><p id = "midRightBP"></p>
+		    	<input type = "radio" id = "midRightC" name="MidRight"><p id = "midRightCP"></p>
+		    	<input type = "radio" id = "midRightD" name="MidRight"><p id = "midRightDP"></p>
+		    	<button id = "chkMidRight" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qBottomLeft">
+		    	<h3 id = "qBottomLefth3"></h3>
+		    	<input type = "radio" id = "bottomLeftA"  name="BottomLeft"><p id = "bottomLeftAP"></p>
+		    	<input type = "radio" id = "bottomLeftB" name="BottomLeft"><p id = "bottomLeftBP"></p>
+		    	<input type = "radio" id = "bottomLeftC" name="BottomLeft"><p id = "bottomLeftCP"></p>
+		    	<input type = "radio" id = "bottomLeftD"  name="BottomLeft"><p id = "bottomLeftDP"></p>
+		    	<button id = "chkBottomLeft" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qBottomCentre">
+		    	<h3 id = "qBottomCentreh3"></h3>
+		    	<input type = "radio" id = "bottomCentreA" name="BottomCentre"><p id = "bottomCentreAP"></p>
+		    	<input type = "radio" id = "bottomCentreB" name="BottomCentre"><p id = "bottomCentreBP"></p>
+		    	<input type = "radio" id = "bottomCentreC" name="BottomCentre"><p id = "bottomCentreCP"></p>
+		    	<input type = "radio" id = "bottomCentreD" name="BottomCentre"><p id = "bottomCentreDP"></p>
+		    	<button id = "chkBottomCentre" class = "chk">Click Here to Check Answer</button>
+		    </div>
+
+		    <div id = "qBottomRight">
+		    	<h3 id = "qBottomRighth3"></h3>
+		    	<input type = "radio" id = "bottomRightA" name="BottomRight"><p id = "bottomRightAP"></p>
+		    	<input type = "radio" id = "bottomRightB" name="BottomRight"><p id = "bottomRightBP"></p>
+		    	<input type = "radio" id = "bottomRightC" name="BottomRight"><p id = "bottomRightCP"></p>
+		    	<input type = "radio" id = "bottomRightD" name="BottomRight"><p id = "bottomRightDP"></p>
+		    	<button id = "chkBottomRight" class = "chk">Click Here to Check Answer</button>
+		    </div>
+	    </div>
+	  </table>
+	  <label id="lblWin"></label>
+	  <button id="BtnWin">Play Again?</button>
+	  <h2 id = "madeBy">Made by Dhruv & Abhay<br>Disclaimer: Choose your question wisely!</h2>
+	</body>
+</html>
